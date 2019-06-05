@@ -1,35 +1,38 @@
 {
   "name": "shopping-calculator",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "This is a Shopping List Calculator Project which aims to test a powerful blend(integration) of React and Electron JS.",
-  "main": "public/electron.js",
+  "main": "build/main.js",
   "author": "Souleh Shaikh",
   "homepage": "./",
   "license": "MIT",
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "electron-prod": "electron .",
-    "electron-dev": "yarn run build && electron .",
-    "preelectron-pack": "yarn build",
-    "electron-pack": "build"
+    "pack": "build",
+    "copy": "xcopy /y public\\electron.js build\\electron.js",
+    "compile": "babel public -d build",
+    "minify": "uglifyjs build/electron.js > build/main.js",
+    "cleanup": "del build\\electron.js",
+    "dev": "dev.bat",
+    "prod": "prod.bat"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
   "devDependencies": {
-    "@material-ui/core": "^3.9.3",
-    "@material-ui/icons": "^3.0.2",
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@material-ui/core": "^4.0.2",
+    "@material-ui/icons": "^4.0.1",
     "classnames": "^2.2.6",
-    "electron": "^5.0.0",
+    "electron": "^5.0.2",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.0",
+    "react-scripts": "^3.0.1",
     "typeface-roboto": "^0.0.54",
-    "typescript": "^3.4.5"
+    "typescript": "^3.5.1"
   },
   "dependencies": {
     "electron-window-state": "^5.0.3",
@@ -43,7 +46,7 @@
       "!assets"
     ],
     "extraMetadata": {
-      "main": "build/electron.js"
+      "main": "build/main.js"
     },
     "nsis": {
       "oneClick": false,
