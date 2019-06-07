@@ -7,26 +7,24 @@
   "homepage": "./",
   "license": "MIT",
   "scripts": {
-    "build": "react-scripts build",
-    "pack": "build",
-    "copy": "xcopy /y public\\electron.js build\\electron.js",
-    "compile": "babel public -d build",
-    "minify": "uglifyjs build/electron.js > build/main.js",
-    "cleanup": "del build\\electron.js",
-    "dev": "dev.bat",
-    "prod": "prod.bat"
+    "dev": "react-scripts build && grunt && electron build\\main.js",
+    "pack": "react-scripts build && grunt && build"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "@material-ui/core": "^4.0.2",
     "@material-ui/icons": "^4.0.1",
     "classnames": "^2.2.6",
     "electron": "^5.0.2",
+    "grunt": "^1.0.4",
+    "grunt-babel": "^8.0.0",
+    "grunt-cli": "^1.3.2",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-uglify": "^4.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
