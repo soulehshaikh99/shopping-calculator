@@ -1,6 +1,6 @@
 {
   "name": "shopping-calculator",
-  "version": "2.0.0",
+  "version": "4.0.0",
   "description": "This is a Shopping List Calculator Project which aims to test a powerful blend(integration) of React and Electron JS.",
   "main": "build/main.js",
   "author": "Souleh Shaikh",
