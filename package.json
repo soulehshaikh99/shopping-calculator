@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "react-scripts build && grunt && electron build\\main.js",
-    "pack": "react-scripts build && grunt && build"
+    "pack": "react-scripts build && grunt && electron-builder build"
   },
   "eslintConfig": {
     "extends": "react-app"
