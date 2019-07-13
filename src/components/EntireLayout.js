@@ -370,7 +370,11 @@ class EntireLayout extends Component {
             pricePerUnit: pricePerUnit
         };
         const data = this.state.data.filter(value => value.id !== id);
-        this.setState({data: data, editItem: editItem});
+        this.setState({
+            data: data,
+            totalSum: this.state.totalSum-(noOfUnits*pricePerUnit),
+            editItem: editItem
+        });
         this.handleAdditionOfItem();
     }
 }
